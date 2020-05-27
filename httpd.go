@@ -8,12 +8,12 @@ import (
 
 func main() {
     http.HandleFunc("/", HelloServer)
-    http.ListenAndServe(":8080", nil)
+    http.ListenAndServe(":80", nil)
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
     hostname,err := os.Hostname()
     if err == nil {
-        fmt.Fprintf(w, "This hostname is %s\n", hostname)
+        fmt.Fprintf(w, "This version is v1 and hostname is %s\n", hostname)
     }
 }
